@@ -1,2 +1,8 @@
-const btn = document.getElementById('click')
-btn.addEventListener('click', () => alert('You clicked the button!'))
+import React from 'react';
+import ReactDOM from 'react-dom'
+import App from './app';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("app")
+)

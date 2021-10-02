@@ -8,8 +8,17 @@ module.exports = {
   mode: 'development',
   // Where Webpack spits out the results (the myapp static folder)
   output: {
-    path: path.resolve(__dirname, '../backend/myapp/static/myapp/'),
+    path: path.resolve(__dirname, '../backend/myapp/static/myapp/build/'),
     filename: '[name].js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+    ],
   },
   plugins: [
     // Don't output new files if there is an error
